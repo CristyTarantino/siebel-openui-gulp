@@ -1,0 +1,8 @@
+(function() {
+  if (typeof(SiebelApp.Settings) === 'undefined') {
+    SiebelJS.Namespace('<%= moduleName %>');
+  }
+  var a = SiebelApp.Utils.DefineConstants;
+  <%= moduleName %> = a();<%_.forEach(constants, function (constant) { %>
+  <%= moduleName %>.set('<%= constant.name %>', '<%= constant.value %>')<% }); %>;
+}());
